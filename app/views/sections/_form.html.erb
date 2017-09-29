@@ -12,19 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :number %>
-    <%= f.number_field :number %>
-  </div>
-
-  <div class="field">
     <%= f.label :course_id %>
-    <%= f.text_field :course_id %>
+    <%= f.select(:course_id, options_from_collection_for_select(Course.all, :id, :name)) %>
   </div>
 
   <div class="field">
     <%= f.label :professor_id %>
-    <%= f.text_field :professor_id %>
+    <%= f.select(:professor_id, options_from_collection_for_select(Professor.all, :id, :name)) %>
   </div>
+
+  <div class="field">
+    <%= f.label :number %>
+    <%= f.number_field :number %>
+  </div>
+
+
 
   <div class="actions">
     <%= f.submit %>
