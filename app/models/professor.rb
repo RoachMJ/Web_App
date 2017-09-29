@@ -1,5 +1,6 @@
 class Professor < ApplicationRecord
   has_many :courses, :dependent => :destroy
+  # :dependent => :destroy this ensures if a professor is deleted no remaining resources are left behind
   has_many :sections, through: :courses
 
   validates :name, uniqueness: true
