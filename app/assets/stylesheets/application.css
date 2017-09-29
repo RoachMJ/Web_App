@@ -22,7 +22,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
     padding: 10px;
     border-bottom: 2px solid;
     font: small-caps 40px/40px "Times New Roman", serif;
-    color: #000000;
+    color: #676767;
     text-align: left;
 
             img {
@@ -34,7 +34,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
             }
     }
 #notice {
-    color: #000 !important;
+    color: #85020e !important;
     border:2px solid red;
     padding: 1em;
     margin-bottom: 2em;
@@ -46,8 +46,8 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 }
 
 #columns {
-    background: #ffff00;
-    display: table;
+    background: #fff341;
+    display: flex;
 
         #main {
         padding: 1em;
@@ -57,7 +57,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 
         #side {
             padding: 1em 2em;
-            background: #ffff00;
+            background: #fffdf5;
 
                 ul {
                 padding: 0;
@@ -66,7 +66,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
                     list-style: none;
 
                         a {
-                        color: #bfb;
+                        color: #0e10ff;
                         font-size: small;
 
                         }
