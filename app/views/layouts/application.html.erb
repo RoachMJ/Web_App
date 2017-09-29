@@ -19,7 +19,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class ="<%= controller.controller_name %>">
+
+  <header class="navbar  navbar-inverse">
+    <div class="navbar-class">
+      <div class="container">
+
+
+        <div id="banner">
+    <%= image_tag 'USMC.jpeg', alt: 'USMC'%>
+    <span class="title"><%= @page_title %></span>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <!--<li class="active"><a href="#">Home</a></li>-->
+        <li><%=link_to "Professors", professors_path%></li>
+        <li><%=link_to "Courses", courses_path%></li>
+        <li><%=link_to "Sections", sections_path%></li>
+      </ul>
+    </div>
+  </div>
+      </div>
+    </div>
+  </header>
     <%= yield %>
   </body>
 </html>
