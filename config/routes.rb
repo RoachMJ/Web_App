@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  devise_for :users, controllers: {
+      sessions: 'users/sessions'
+  }
+
+
+  root to: "sections#index"
   resources :sections
   resources :courses
   resources :professors
