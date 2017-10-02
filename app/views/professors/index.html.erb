@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Professors</h1>
-
+<%= form_tag(professors_path, method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag :q, params[:q], required: true %>
+    <%= submit_tag 'Search', name: nil %>
+<% end %>
+<% if @professors.blank? %>
+    <h4>No results found for "<%= params[:q] %>".Ensure that you are searching for a section number!</h4>
+<% end %>
 <table>
   <thead>
     <tr>

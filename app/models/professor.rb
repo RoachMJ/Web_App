@@ -6,5 +6,5 @@ class Professor < ApplicationRecord
   validates :name, uniqueness: true
   # Note: validations are not pluralized **** if they are pluralized it will reult in and error under create
   validates :name, :length => {:in => 2..20}
-  validates :name, format: { with: /\A[a-zA-Z\s]+\z/, message: "only allows letters" }
+  validates :name, format: { with: /\A[a-zA-Z\s]+\z/ , message: "Name must consist of letters only, No numbers!" }
 end

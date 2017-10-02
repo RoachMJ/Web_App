@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Courses</h1>
-
+<%= form_tag(courses_path, method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag :q, params[:q], required: true %>
+    <%= submit_tag 'Search', name: nil %>
+<% end %>
+<% if @courses.blank? %>
+    <h4>No results found for "<%= params[:q] %>".</h4>
+<% end %>
 <table>
   <thead>
     <tr>
