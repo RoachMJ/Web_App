@@ -5,7 +5,7 @@ class SectionsController < ApplicationController
   # GET /sections.json
   def index
     @sections = Section.all
-    @sections = Section.where('name LIKE ?', "%#{params[:q]}%").order('id DESC')
+    @sections = Section.where('number LIKE ?', "%#{params[:q]}%").order('id DESC')
   end
 
   # GET /sections/1

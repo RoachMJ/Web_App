@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 # Bundle install for bootstrap sass
-# gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle install
 gem 'devise', :git => 'https://github.com/plataformatec/devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
