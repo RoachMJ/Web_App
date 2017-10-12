@@ -5,7 +5,7 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <p class="notice"><%= notice %></p>
+    <!--<p class="notice"><#%= notice %></p>-->
     <p class="alert"><%= alert %></p>
     <!--login/signup was here-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,27 +17,30 @@
 
 
   <body>
-  <div class="container">
-    <ul class="nav nav-tabs  " id="navbar">
+  <div class="container" id="navbarfull">
+    <ul class="nav nav-pills" id="navbar">
       <li><%= link_to "Professors", professors_path %> </li>
       <li><%= link_to "Sections", sections_path %> </li>
       <li><%= link_to "Courses", courses_path%> </li>
-
-    <%= form_tag( @search_path, method: "get") do %>
-                <%= label_tag(:q, "Search for:") %>
-                <span class="glyphicon glyphicon-search"><%= text_field_tag :q, params[:q], required: true %></span>
-                <%= submit_tag 'Search', name: nil %>
-                <% end %>
-
-      <div class="alert" id="current-user">
-      <% if user_signed_in? %>
-          <span class="glyphicon-search"><%=current_user.email %></span>
-          <strong> Not you? <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></strong>
-
-
-          </div>
-      </ul>
+      <div id="current-user">
+        <% if user_signed_in? %>
+            <span class="glyphicon glyphicon-user"> <%=current_user.email %></span>
+            <p><strong> Not you? <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></strong></p>
+        </div>
+          <div id="search">
+            <%= form_tag( @search_path, method: "get") do %>
+              <%= label_tag(:q,"") %>
+              <span class="glyphicon glyphicon-search"></span>
+                <div class="searchbar">
+                  <%= text_field_tag :q, params[:q], required: true %>
+                    <!--<div class="submit">-->
+                    <span class="submit"><%= submit_tag ' ', name: nil %></span>
+                    <!--</div>-->
                 </div>
+            <% end %>
+          </div>
+    </ul>
+        </div>
 
 
     <% else %>
@@ -47,13 +50,13 @@
     </div>
     <% end %>
     <div class="container-fluid" id="sidebarm">
-      <div class="row">
-        <div class="col-md-3 sidebar" id="sidebar">
-        </div>
-          <div class="col-md-9 col-md-offset-3 content" id="content">
+      <!--<div class="row">-->
+        <!--<div class="col-md-3 sidebar" id="sidebar">-->
+        <!--</div>-->
+          <div class="col-md2 col-md-offset-2 content" id="content">
             <%= yield %>
           </div>
-      </div>
+      <!--</div>-->
     </div>
 
   </body>

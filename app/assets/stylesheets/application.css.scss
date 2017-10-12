@@ -15,12 +15,23 @@
  */
 @import 'bootstrap';
 
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 $a-tags: 'a, a:active, a:hover, a:visited';
 $a-tags-hover: 'a:active, a:hover';
 
+#navbarfull{
+  background-color: lightsteelblue;
+  width:95%;
+  height: 40px;
+  border-radius: 90px 90px 90px 90px;
+  display: block;
+  margin-top: -35px;
+}
 
 #navbar{
-  background-color: lightsteelblue;
+  //background-color: lightsteelblue;
+
 
   #{$a-tags} {
     color: white;
@@ -29,17 +40,79 @@ $a-tags-hover: 'a:active, a:hover';
   #{$a-tags-hover} {
     color: lightslategray;
   }
+  #sign-up{
+    position: relative;
+
+    top: -18px;
+    right: 0px;
+    top: 35px;
+    #{$a-tags} {
+      color: black;
+      text-decoration: none;
+    }
+  }
 
 }
-#content{
-  height: 100%;
-  background-color: white;
-}
-#sidebarm{
-  height: 100%;
-  background-color: navy;
-}
-#current-user{
+//#content{
+// height: 100%;
+  //width: 50%;
+//  background-color: white;
+//}
+//#sidebarm{
+//  float: left;
+//  height: 100%;
+//  width:5%;
+//  background-color: navy;
+//}
+
+
+
+.glyphicon-search {
   float: right;
+  top: -3px;
+  right: 91px;
+  color: grey;
+  margin: 10px;
+  z-index: 3;
+
+}
+#current-user {
+    float: right;
+    top: 2px;
+    position: relative;
+    font-size: medium;
+
+  }
+#search{
+  float: right;
+  top: 7px;
+  position: relative;
+  z-index: 2;
+
+}
+.searchbar input{
+  position: relative;
+  float: right;
+  top: -18px;
+  right: 62px;
+  border-radius: 90px 90px 90px 90px;
+  display: block;
+  border-right: black;
+  outline : none;
+  padding-right: 20px;
+  padding-left: 10px;
+  z-index: 0;
+
+}
+.submit input {
+  float: right;
+  position: relative;
+  display: block;
+  top: -41px;
+  right: 95px;
+  border-radius: 90px 90px 90px 90px;
+  border: transparent;
+  background-color: transparent;
+  z-index: 3;
 
 }

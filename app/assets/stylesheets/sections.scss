@@ -1,4 +1,23 @@
 // Place all the styles related to the Sections controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
 @import 'bootstrap';
+$a-tags-hover: 'a:active, a:hover';
+.new_sec {
+  #{$a-tags-hover} {
+    color: lightslategray;
+  }
+.actions {
+  border-radius: 45px 45px 45px 45px;
+  background-color: purple;
+}
+  input[type="submit"]
+  {
+    border-radius: 45px 45px 45px 45px;
+  }
+
+}
