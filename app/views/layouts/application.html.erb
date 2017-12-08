@@ -27,6 +27,8 @@
       <li><%= link_to "Professors", professors_path %> </li>
       <li><%= link_to "Sections", sections_path %> </li>
       <li><%= link_to "Courses", courses_path%> </li>
+      <li><%= link_to "Students", students_path%> </li>
+      <li><%= link_to "Enrollments", enrollments_path%> </li>
       <div id="current-user">
         <% if user_signed_in? %>
             <span class="glyphicon glyphicon-user"> <%=current_user.email %></span>

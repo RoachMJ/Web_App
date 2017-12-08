@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
 <p>
   <strong>Name:</strong>
   <%= @student.name %>
@@ -11,9 +11,69 @@
 </p>
 
 <p>
-  <strong>Student number:</strong>
+  <strong>Student Number:</strong>
   <%= @student.student_number %>
 </p>
+<h4> Student is Enrolled in the following Courses</h4>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Course</th>
+    <th>Section</th>
+    <th>Professor</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
 
+  <tbody>
+  <% @student.enrollments.each do |enrollment| %>
+      <tr>
+        <td><%= enrollment.section.course.name %></td>
+        <td><%= enrollment.section.number %></td>
+        <td><%= enrollment.section.professor.name %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+  </div>
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

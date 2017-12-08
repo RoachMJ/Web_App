@@ -1,10 +1,11 @@
 class EnrollmentsController < ApplicationController
   before_action :set_enrollment, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
   # GET /enrollments
   # GET /enrollments.json
   def index
     @enrollments = Enrollment.all
+    @enrollments = Enrollment.where('section_id || student_id LIKE ?', "%#{params[:q]}%").order('id DESC')
   end
 
   # GET /enrollments/1

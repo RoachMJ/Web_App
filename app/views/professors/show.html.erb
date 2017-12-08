@@ -1,9 +1,38 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @professor.name %>
-</p>
 
+  <h3>Professor: <%= @professor.name %></h3>
+  <h4> Courses  </h4>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Course</th>
+      <th>Section</th>
+      <th>Students</th>
+      <th>Student Email</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @professor.sections.each do |section| %>
+        <tr>
+          <td><%= section.course.name %></td>
+          <td><%= section.number %></td>
+          <td><% section.enrollments.each do |enrollment| %>
+                <li><%= enrollment.student.name %> </li>
+
+                <% end %></td>
+          <td><% section.enrollments.each do |enrollment| %>
+                <li>  <%= enrollment.student.email %></li>
+
+            <% end %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 <%= link_to 'Edit', edit_professor_path(@professor) %> |
 <%= link_to 'Back', professors_path %>

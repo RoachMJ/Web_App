@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
 <h1>Enrollments</h1>
 
-<table>
+
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Section</th>
@@ -14,8 +15,8 @@
   <tbody>
     <% @enrollments.each do |enrollment| %>
       <tr>
-        <td><%= enrollment.section %></td>
-        <td><%= enrollment.student %></td>
+        <td><%= enrollment.section.number %></td>
+        <td><%= enrollment.student.name %></td>
         <td><%= link_to 'Show', enrollment %></td>
         <td><%= link_to 'Edit', edit_enrollment_path(enrollment) %></td>
         <td><%= link_to 'Destroy', enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,7 +24,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Enrollment', new_enrollment_path %>
